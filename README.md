@@ -37,16 +37,13 @@ built-in `grok` command. That command runs xAI's official Grok Build
 `linux-aarch64` binary under termux-chroot. Nothing was opened against
 `termux/termux-app`. PR #1 is now merged into the fork's `master`.
 
-A debug preview APK named `chroot-arm64-v8a.apk` was prepared under
-the tag `v0.118.0-chroot-preview` on the fork. Checked with the GitHub
-API on 26 November 2026, that release is still a draft, so it does not
-appear on the public
-[Releases](https://github.com/fitzyracing1/termux-app/releases) page.
-Once it is published, download `chroot-arm64-v8a.apk` from that page,
+A debug preview APK named `chroot-arm64-v8a.apk` is on the
+[v0.118.0-chroot-preview](https://github.com/fitzyracing1/termux-app/releases/tag/v0.118.0-chroot-preview)
+prerelease. Download
+[chroot-arm64-v8a.apk](https://github.com/fitzyracing1/termux-app/releases/download/v0.118.0-chroot-preview/chroot-arm64-v8a.apk),
 open the file on the phone, and allow installing from the browser or
-Files app. Until then, build from the fork's `master` (which already
-includes the chroot label and the built-in `grok` command), or use a
-copy of the preview APK you already have.
+Files app. You can also build from the fork's `master`, which already
+includes the chroot label and the built-in `grok` command.
 
 ## Prepare the Mac
 
