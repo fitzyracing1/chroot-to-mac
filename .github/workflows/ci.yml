@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main, docs/workflow]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    name: markdownlint and link check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run markdownlint
+        run: |
+          npm install --global markdownlint-cli@0.45.0
+          markdownlint "**/*.md"
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --verbose
+            --no-progress
+            --accept 200,206,429
+            --max-retries 5
+            --retry-wait-time 10
+            "**/*.md"
+          fail: true
+          token: ${{ secrets.GITHUB_TOKEN }}
